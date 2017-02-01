@@ -1,10 +1,6 @@
 FROM mysql:latest
 MAINTAINER shigemk2 i.am.shige@gmail.com
 
-# ADD files/run_db files/init_db files/epcis_schema.sql /tmp/
-# RUN /tmp/init_db
-# ENTRYPOINT "/tmp/run_db"
-
 ADD test_db/employees.sql /docker-entrypoint-initdb.d/
 
 ADD test_db/load_departments.dump /docker-entrypoint-initdb.d/
